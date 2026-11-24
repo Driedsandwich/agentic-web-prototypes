@@ -1,0 +1,19 @@
+{
+  "id": "phone-discount",
+  "title": "Sample phone or internet discount",
+  "notice": "Sample rules — not the real program thresholds",
+  "source": {
+    "site": "phone-discount-rules.example",
+    "copiedOn": "2026-11-18",
+    "samplePreflight": "Pass",
+    "application": "https://phone-discount-rules.example/apply"
+  },
+  "rule": {
+    "state": "Ohio",
+    "minimumChildren": 0,
+    "baseMonthlyCents": 161000,
+    "additionalPersonCents": 44000,
+    "reviewRangeCents": 20000
+  },
+  "checklist": ["Proof of address", "Recent income records", "Phone or internet service details"]
+}

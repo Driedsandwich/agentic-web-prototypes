@@ -1,0 +1,100 @@
+/* Pliant · Pencil Guide */
+:root[data-palette="Pencil_Guide"] {
+  --background: #E9E4C9;
+  --surface: #C5CDAF;
+  --surface-strong: #B4BFA6;
+  --border: #4D5748;
+  --text: #242B20;
+  --text-muted: #384431;
+  --accent: #1E3E1E;
+  --on-accent: #F8F8EC;
+  --success: #69BA9C;
+  --on-success: #142A21;
+  --danger: #6B101C;
+  --on-danger: #FFFFFF;
+  --warning: #F3D680;
+  --on-warning: #31260E;
+  --focus: #153D7A;
+  --decision-1: #356996;
+  --decision-2: #6F480E;
+  --decision-3: #42204C;
+  --band: #A1AF94;
+  --input: #FAF9EE;
+  --decision-1-surface: #DCE5E4;
+  --decision-2-surface: #E2DBC9;
+  --decision-3-surface: #E4DBE3;
+  --rule: #8B957E;
+  --data-series: #313F31;
+}
+
+/* audit:contrast body normal --text --background */
+/* audit:contrast muted-copy normal --text-muted --background */
+/* audit:contrast on-accent normal --on-accent --accent */
+/* audit:contrast decision-1-mark nontext --decision-1 --surface */
+/* audit:contrast form-copy normal --text --surface */
+/* audit:contrast form-secondary normal --text-muted --surface */
+/* audit:contrast section-heading large --text --band */
+/* audit:contrast section-copy normal --text --band */
+/* audit:contrast header-chevron nontext --text --band */
+/* audit:contrast ledger-heading normal --text --surface-strong */
+/* audit:contrast ledger-copy normal --data-series --surface-strong */
+/* audit:contrast input-value normal --text --input */
+/* audit:contrast input-outline nontext --border --input */
+/* audit:contrast input-outline-outside nontext --border --surface */
+/* audit:contrast radio-ring nontext --border --surface */
+/* audit:contrast radio-dot nontext --text --surface */
+/* audit:contrast toggle-track nontext --text --background */
+/* audit:contrast toggle-knob nontext --background --text */
+/* audit:contrast completed-step-check nontext --background --text */
+/* audit:contrast primary-control nontext --accent --surface */
+/* audit:contrast on-success normal --on-success --success */
+/* audit:contrast on-danger normal --on-danger --danger */
+/* audit:contrast on-warning normal --on-warning --warning */
+/* audit:contrast decision-2-mark nontext --decision-2 --band */
+/* audit:contrast decision-3-mark nontext --decision-3 --surface */
+/* audit:contrast focus-background nontext --focus --background */
+/* audit:contrast focus-surface nontext --focus --surface */
+/* audit:contrast focus-band nontext --focus --band */
+/* audit:contrast focus-surface-strong nontext --focus --surface-strong */
+/* audit:contrast focus-input nontext --focus --input */
+/* audit:contrast decision-1-rail nontext --decision-1 --decision-1-surface */
+/* audit:contrast decision-1-copy normal --text --decision-1-surface */
+/* audit:contrast decision-1-source normal --text-muted --decision-1-surface */
+/* audit:contrast decision-1-control nontext --border --decision-1-surface */
+/* audit:contrast decision-1-focus nontext --focus --decision-1-surface */
+/* audit:contrast decision-2-rail nontext --decision-2 --decision-2-surface */
+/* audit:contrast decision-2-copy normal --text --decision-2-surface */
+/* audit:contrast decision-2-source normal --text-muted --decision-2-surface */
+/* audit:contrast decision-2-control nontext --border --decision-2-surface */
+/* audit:contrast decision-2-focus nontext --focus --decision-2-surface */
+/* audit:contrast decision-3-rail nontext --decision-3 --decision-3-surface */
+/* audit:contrast decision-3-copy normal --text --decision-3-surface */
+/* audit:contrast decision-3-source normal --text-muted --decision-3-surface */
+/* audit:contrast decision-3-control nontext --border --decision-3-surface */
+/* audit:contrast decision-3-focus nontext --focus --decision-3-surface */
+
+/* audit:ladder grayscale
+   --background --surface --surface-strong --border --text-muted --text */
+/* audit:ladder decision-grayscale
+   --decision-1 --decision-2 --decision-3 */
+/* audit:ladder band-canvas
+   --background --band */
+/* audit:ladder input-canvas
+   --background --input */
+
+/* audit:group decisions
+   --decision-1 --decision-2 --decision-3 */
+/* audit:group key-role-separation
+   --accent --success --decision-1 */
+/* audit:group negative-role-separation
+   --danger --decision-2 */
+/* audit:group action-change-separation
+   --accent --decision-2 --decision-3 */
+/* audit:group success-movement-separation
+   --success --decision-3 */
+/* audit:group warning-example-separation
+   --warning --decision-1 */
+/* audit:group warning-collapse-separation
+   --warning --decision-2 */
+/* audit:group status-separation
+   --success --danger --warning */

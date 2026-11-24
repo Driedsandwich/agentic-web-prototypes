@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg { --artwork-dark: black; --artwork-light: white; }
+  </style>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="var(--ink, var(--artwork-dark))" stop-opacity=".66"/>
+      <stop offset="1" stop-color="var(--ink, var(--artwork-dark))" stop-opacity=".15"/>
+    </linearGradient>
+    <linearGradient id="sea" x2="0" y2="1">
+      <stop stop-color="var(--ink, var(--artwork-dark))" stop-opacity=".49"/>
+      <stop offset="1" stop-color="var(--ink, var(--artwork-dark))" stop-opacity=".82"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="var(--light, var(--artwork-light))" stop-opacity=".7"/>
+      <stop offset="1" stop-color="var(--light, var(--artwork-light))" stop-opacity="0"/>
+    </radialGradient>
+    <g id="lamp" fill="none" stroke="var(--ink, var(--artwork-dark))" stroke-width="3.3">
+      <path d="M0 0v-74c0-22-22-23-26-7"/>
+      <circle cx="-26" cy="-79" r="12" fill="url(#glow)" stroke="none"/>
+      <path d="M-31-79h10l3 4h-16Z" fill="var(--light, var(--artwork-light))" stroke="none"/>
+    </g>
+  </defs>
+
+  <g id="lighthouse" fill="var(--ink, var(--artwork-dark))">
+    <path fill="var(--light, var(--artwork-light))" d="M0 0h720v230H0z"/>
+    <path fill="url(#sky)" d="M0 0h720v178H0z"/>
+    <path fill="url(#glow)" d="M0 66h290v171H0z"/>
+    <path opacity=".2" d="M0 44c56 25 92 12 134 7 30-4 66 9 104 5 42-4 76-24 124-22 30 2 45 12 85 4l-7 18c-25 12-69 6-101 10-59 8-89 30-144 19C117 69 61 84 0 63Zm230 51c43 14 71-3 108-5 43-3 62 3 91-6 45-14 82-7 100 1-64 7-112 27-182 22-44-4-77 4-117-12ZM0 106c39-4 52 4 83 8 45 6 72-4 117 6-31 9-55 13-98 5C57 115 18 125 0 121Z"/>
+    <path fill="var(--light, var(--artwork-light))" d="M144 157a9 9 0 1 0-.01 0Z"/>
+    <path fill="url(#sea)" d="M0 157h720v73H0z"/>
+    <g fill="none" stroke="var(--light, var(--artwork-light))" stroke-linecap="round" opacity=".36">
+      <path d="M4 163h58m14 2h73m12-4h140m-192 10h64m-95 4h109m-91 7h67m-37 8h48m-69 6h114m-201 11h74m28 6h72m-15 8h85m-114 4h28m-110-23h38m102-28h99m-53 11h57m-43 10h93m-42 17h87"/>
+    </g>
+    <path d="m326 230 34-20 24-4 22-22 36-3 34-22 32 3 22-18 44 3 19-11 33 7 34-11 32 10 28-12v100Z"/>
+    <path fill="var(--light, var(--artwork-light))" opacity=".27" d="m433 192 33-6 17-17 29-1-12 18-41 9-15 18-35 3Zm97-29 22-14 25 3-15 14-30 12-17 17-19 1 6-14Zm62-13 30 3 17-7 25 6-17 12-34 2-17 16-23-2Zm79 20 19-9 30 2-13 15-30 6-11 15-33 1 6-15Z"/>
+    <path fill="var(--light, var(--artwork-light))" opacity=".64" d="m518 166 16-98h30l17 98c-19 7-43 7-63 0Z"/>
+    <path opacity=".6" d="m550 69 14-1 17 98c-8 3-15 4-21 5Z"/>
+    <path d="M537 110h8v15h-8zm9-26h6v12h-6zm-11 76 2-18h12l1 21zM530 63h38v9h-38zm6-26h26v26h-26zM528 40l21-15 21 15zm20-20h2v8h-2z"/>
+    <path fill="var(--light, var(--artwork-light))" opacity=".7" d="M540 45h6v13h-6zm9 0h5v13h-5zm8 0h2v13h-2z"/>
+    <path fill="none" stroke="var(--ink, var(--artwork-dark))" stroke-width="1.4" d="M529 54v10m7-10v10m26-10v10m6-10v10m-39-9h39"/>
+  </g>
+
+  <g id="pier" fill="var(--ink, var(--artwork-dark))">
+    <path fill="var(--light, var(--artwork-light))" d="M0 0h720v230H0z"/>
+    <path fill="url(#sky)" d="M0 0h720v154H0z"/>
+    <path opacity=".17" d="M0 57c54 11 108 6 155 1 54-6 107 6 164 3 88-6 130-26 208-23 61 3 122 15 193 11v15c-77 12-124 1-190-3-81-4-137 28-219 22-67-4-96-15-159-5C100 85 52 82 0 79Zm0 52c63-6 100 9 143 7 82-2 122-14 178-7-45 2-96 20-174 20-42 0-92-10-147-6Z"/>
+    <path opacity=".62" d="m0 143 40-10 57-3 70 11 37-7 11 2 26 9 40-1 46 10H0Z"/>
+    <path opacity=".4" d="M0 148l70-5 44 5 45-3 41 9H0Z"/>
+    <path fill="url(#sea)" d="M0 154h720v76H0z"/>
+    <g fill="none" stroke="var(--light, var(--artwork-light))" stroke-linecap="round" opacity=".31">
+      <path d="M10 160h68m26 1h50m12 2h97m-230 5h136m14 3h80m-254 9h97m23 3h65m-156 8h35m47 8h78m-179 10h89m17 8h80m-114 7h50m33-49h104m-59 16h38m-66 17h86m-46 15h78"/>
+      <path stroke-width="2.2" d="M260 183h15m-10 5h21m-20 5h11m-17 6h18m-14 8h20m-12 6h17m-26 8h12m42-29h12m-21 8h30m-22 6h13m-19 6h23m-15 12h24m43-30h16m-23 12h35m-20 6h14m-36 9h36m53-24h30m-17 9h17m-25 8h18m-4 10h23"/>
+    </g>
+    <path d="m234 171 486-68v12l-486 61Zm0 8 486-48v8l-486 44Zm0 4 486-44v21l-486 29Z"/>
+    <path fill="var(--light, var(--artwork-light))" opacity=".31" d="m237 184 483-43v4l-483 42Z"/>
+    <path fill="none" stroke="var(--ink, var(--artwork-dark))" stroke-width="5" d="m244 170 0 30m12-31 0 34m17-37v35m17-38v42m20-44v42m22-47v53m25-58v60m31-64v65m35-71v74m40-80v90"/>
+    <path fill="none" stroke="var(--ink, var(--artwork-dark))" stroke-width="9" d="M505 134v96m51-103v103m57-112v112m61-120v120"/>
+    <use href="#lamp" transform="translate(299 168) scale(.28)"/>
+    <use href="#lamp" transform="translate(347 159) scale(.43)"/>
+    <use href="#lamp" transform="translate(437 144) scale(.68)"/>
+    <use href="#lamp" transform="translate(562 124)"/>
+  </g>
+
+  <g id="map" fill="var(--ink, var(--artwork-dark))">
+    <path fill="var(--light, var(--artwork-light))" d="M0 0h720v230H0z"/>
+    <path opacity=".51" d="M158 230c10-35 31-45 67-67 33-20 48-45 85-65 45-23 111-39 169-30 42 6 88-17 108-33l27-35h106v230Z"/>
+    <path fill="none" stroke="var(--ink, var(--artwork-dark))" stroke-opacity=".18" stroke-width="23" d="m-11 65 143 43 78-7 69-66 122-17L501 4M67-16 41 62 8 100l112 21 38 43-12 66m17-230-55 88-52 105L45 240M252-7l-63 73-24 65-49 51-19 58M359-10l-40 54-66 29-36 42-23 43-10 74"/>
+    <g opacity=".38">
+      <path d="m11 14 32 9-11 27-26-8Zm51 12 27 10-13 24-25-8Zm57-13 21 10-13 20-21-5ZM36 70l20 4-5 18-21-5Zm40 9 19 6-10 21-22-6Zm50-11 18 7-8 16-19-6Zm31-20 23 4-15 23-18-5Zm43-35 28 11-10 14-29-5Zm44-1h34l-3 15-40 4Zm47 2 27-1-8 18-31 4Zm52 5 30-3 2 18-39 7Zm54 14 37-7 1 13-34 7Zm53-12 30-6 3 18-31 4Zm52-5 38-4-11 22-26 2Z"/>
+      <path d="m8 132 35 1-8 21-33 2Zm52 4 28 4-5 16-28-1Zm44 9 20 4-9 19-22-3Zm-91 39 27-14-2 23-32 9Zm38-2 29-12-5 24-30 13Zm34 28 25-9-5 26-23 3Zm45-8 21-17-6 30-17 13Zm54-82 20 3-10 18-19-5Zm46-27 18-14 8 12-18 14Zm38-38 25-10 4 13-25 7Zm48 12 28-15 11 8-34 16Zm60-12 27-6 4 13-27 2Z"/>
+    </g>
+    <path fill="none" stroke="var(--light, var(--artwork-light))" stroke-width="5" d="M155 231c10-34 42-52 71-69 25-15 41-32 61-49 40-34 112-51 181-48 37 2 84-9 111-25l30-41M348 81l9 23m73-36 1 44m78-50 16 58m35 57 37 53m-193-49-22 49m-73-15-14 15m-68-59 17 23"/>
+    <path fill="none" stroke="var(--light, var(--artwork-light))" stroke-width="1.7" d="m297 111 19 21m-33-10 20 21m-39-7 22 23m90 70-13-25 71-29m-32 43-10-22m24 17-11-23m23 16-10-21"/>
+    <path fill="var(--light, var(--artwork-light))" d="M611 229c16-15 36-24 61-18l13-20 9 2-6 17 17 19Z"/>
+  </g>
+</svg>

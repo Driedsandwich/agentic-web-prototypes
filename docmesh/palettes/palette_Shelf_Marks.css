@@ -1,0 +1,23 @@
+:root[data-palette="Shelf_Marks"] {
+  --background: #C6B8AA;
+  --surface: #FCFAF5;
+  --surface-strong: #C3C7D2;
+  --border: #5B5C6A;
+  --text: #25202A;
+  --text-muted: #393640;
+  --accent: #F2B84A;
+  --on-accent: #20170A;
+  --success: #51763B;
+  --on-success: #FFFFFF;
+  --danger: #8A2239;
+  --on-danger: #FFFFFF;
+  --warning: #704200;
+  --on-warning: #FFFFFF;
+  --focus: #51318B;
+  --decision-1: #68431F;
+  --decision-2: #366C9D;
+  --decision-3: #5A2264;
+  --input: #F1F3EF;
+  --inset: #E7E1D9;
+  --text-result: #15121B;
+}

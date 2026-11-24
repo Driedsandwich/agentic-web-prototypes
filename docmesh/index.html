@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" data-palette="Shelf_Marks">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Docmesh</title>
+  <link rel="stylesheet" href="./palettes/palette_Shelf_Marks.css">
+  <link rel="stylesheet" href="./palettes/palette_Index_Leaves.css">
+  <link rel="stylesheet" href="./palettes/palette_Proof_Copy.css">
+  <link rel="stylesheet" href="./app.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <h1>Docmesh</h1>
+      <p>One question, three documentation networks, a source for every sentence.</p>
+    </header>
+
+    <section class="ask-area" aria-label="Ask a sample question">
+      <p class="start"><strong>Start here:</strong> choose a sample question, then press Ask.</p>
+      <div class="ask-row">
+        <details id="question-picker" class="question-picker">
+          <summary>
+            <span class="sample-tag">Sample</span>
+            <span id="selected-question">Loading sample questions…</span>
+            <span class="chevron" aria-hidden="true"></span>
+          </summary>
+          <ul id="question-options" class="question-options" aria-label="Sample questions"></ul>
+        </details>
+        <button id="ask-button" class="ask-button" type="button" disabled>Ask</button>
+      </div>
+      <p class="demo-note">Ask assembles an answer using sample data only. Nothing is sent out, no AI model runs, and there is no cost.</p>
+      <p id="ask-status" class="status" role="status"></p>
+      <noscript><p>Enable JavaScript to try the sample questions.</p></noscript>
+    </section>
+
+    <section class="panel answer" aria-labelledby="answer-title">
+      <header class="panel-header">
+        <h2 id="answer-title">Answer</h2>
+        <p id="answer-label" class="section-note" hidden>Sample answer assembled from sample summaries</p>
+      </header>
+      <p id="answer-empty" class="empty-answer">Your answer and its sources will appear here.</p>
+      <ol id="answer-rows" class="answer-rows" hidden></ol>
+    </section>
+
+    <section class="panel path" aria-labelledby="path-title">
+      <header class="panel-header">
+        <h2 id="path-title">Call path</h2>
+        <span class="sample-tag">Sample</span>
+      </header>
+      <ol id="call-path" class="call-path">
+        <li class="path-step">
+          <div class="path-card path-start"><h3>Question</h3></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="panel add-network" aria-labelledby="template-title">
+      <header class="panel-header">
+        <h2 id="template-title">Add your docs as a network</h2>
+      </header>
+      <div class="template-grid">
+        <div class="template-card">
+          <div class="template-header">
+            <h3>agent-manifest.json</h3>
+            <span class="sample-tag">Sample</span>
+            <button id="copy-button" class="secondary-button" type="button" disabled>Copy template</button>
+          </div>
+          <pre><code id="manifest-template"></code></pre>
+          <p id="copy-status" class="status" role="status"></p>
+        </div>
+        <div class="template-card">
+          <div class="template-header">
+            <h3>Callable URL</h3>
+            <span class="sample-tag">Sample</span>
+          </div>
+          <code id="callable-url"></code>
+        </div>
+      </div>
+    </section>
+
+    <details class="panel glossary" id="glossary" open>
+      <summary>
+        <h2>Words used here</h2>
+        <span class="chevron" aria-hidden="true"></span>
+      </summary>
+      <dl>
+        <div><dt>Documentation network</dt><dd>A set of tools that other sites can call to read sections of a document.</dd></div>
+        <div><dt>MCP</dt><dd>A protocol for calling tools, such as a tool that reads a section.</dd></div>
+        <div><dt>Endpoint / callable URL</dt><dd>The web address a caller uses to reach a network or server.</dd></div>
+        <div><dt>Origin</dt><dd>The identity of the caller's site that the browser uses for cross-site checks.</dd></div>
+        <div><dt>CORS</dt><dd>Browser rules for requests between different origins. The server uses response headers to say which origins it allows.</dd></div>
+        <div><dt>Access-Control-Allow-Origin</dt><dd>A response header that says which caller origin the server allows.</dd></div>
+        <div><dt>Preflight</dt><dd>A check the browser may send before making a cross-origin request.</dd></div>
+        <div><dt>Peer Preflight / Pass</dt><dd>Peer Preflight checks whether one site can call another. Pass is the sample outcome shown here.</dd></div>
+        <div><dt>Manifest</dt><dd>A small JSON file that names the network and identifies which tool reads a section.</dd></div>
+      </dl>
+    </details>
+    <p id="glossary-status" class="status" role="status"></p>
+  </main>
+
+  <aside class="palette-picker" aria-label="Prototype palette">
+    <p id="palette-status" class="status" role="status"></p>
+    <div class="palette-control">
+      <label for="palette-select">Palette</label>
+      <select id="palette-select" autocomplete="off">
+        <option value="Shelf_Marks" selected>Shelf Marks</option>
+        <option value="Index_Leaves">Index Leaves</option>
+        <option value="Proof_Copy">Proof Copy</option>
+      </select>
+    </div>
+  </aside>
+
+  <template id="answer-row-template">
+    <li class="answer-row">
+      <p class="answer-sentence"></p>
+      <details class="citation">
+        <summary>
+          <span class="source-mark" aria-hidden="true"></span>
+          <span class="citation-text">
+            <span class="citation-title"></span>
+            <span class="attribution"></span>
+          </span>
+          <span class="chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="sample-summary">
+          <span class="sample-tag">Sample</span>
+          <p></p>
+        </div>
+      </details>
+      <p class="status" role="status"></p>
+    </li>
+  </template>
+
+  <template id="path-step-template">
+    <li class="path-step">
+      <article class="path-card">
+        <div class="path-card-header">
+          <div>
+            <h3></h3>
+            <p class="sample-host"></p>
+          </div>
+          <span class="sample-tag">Sample</span>
+        </div>
+        <div class="path-result" hidden>
+          <p class="returned-section"></p>
+          <p class="preflight"><span class="check" aria-hidden="true">✓</span> <span class="preflight-result"></span></p>
+        </div>
+        <p class="attribution"></p>
+      </article>
+    </li>
+  </template>
+</body>
+</html>

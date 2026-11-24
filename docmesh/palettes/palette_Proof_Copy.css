@@ -1,0 +1,23 @@
+:root[data-palette="Proof_Copy"] {
+  --background: #191C24;
+  --surface: #292E39;
+  --surface-strong: #404654;
+  --border: #989BA8;
+  --text: #F1F0F4;
+  --text-muted: #BDC1CE;
+  --accent: #FFC9BE;
+  --on-accent: #2D1917;
+  --success: #B1DA85;
+  --on-success: #19280D;
+  --danger: #79304D;
+  --on-danger: #FFFFFF;
+  --warning: #624716;
+  --on-warning: #FFFFFF;
+  --focus: #F6EBFF;
+  --decision-1: #DEEBFF;
+  --decision-2: #BBA065;
+  --decision-3: #63AA9F;
+  --input: #212833;
+  --inset: #333B49;
+  --text-result: #FFFFFF;
+}

@@ -1,0 +1,25 @@
+:root[data-palette="Imprint"] {
+  --background: #E3DDE9;
+  --surface: #FFFFFF;
+  --surface-strong: #D3C8DF;
+  --border: #887F90;
+  --text: #211C29;
+  --text-muted: #5B5165;
+  --accent: #51277F;
+  --on-accent: #FFFFFF;
+  --success: #37703A;
+  --on-success: #FFFFFF;
+  --danger: #B83D76;
+  --on-danger: #FFFFFF;
+  --warning: #81521B;
+  --on-warning: #FFFFFF;
+  --focus: #302246;
+  --decision-1: #044D5E;
+  --decision-2: #8F382C;
+  --decision-3: #626772;
+  --budget: #EEE6D8;
+  --input: #F0F4F7;
+  --table-body: #FAF7F0;
+  --secondary: #211C29;
+  --on-secondary: #FFFFFF;
+}

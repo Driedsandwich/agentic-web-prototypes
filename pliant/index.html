@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" data-palette="Basting_Thread">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try a sample sign-up form that offers reversible help when you pause.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <title>Pliant – Sample workshop sign-up</title>
+  <link rel="stylesheet" href="palettes/palette_Basting_Thread.css">
+  <link rel="stylesheet" href="palettes/palette_Pencil_Guide.css">
+  <link rel="stylesheet" href="palettes/palette_Proof_Sheet.css">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <span class="wordmark"><span class="wordmark-icon" aria-hidden="true"><i></i><i></i><i></i></span>Pliant</span>
+      <span class="masthead-description">A form that adapts when you pause</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="title-line">
+      <h1>Riverside Community Workshop <span>— Spring term sign-up</span></h1>
+      <span class="sample title-sample">Sample</span>
+    </div>
+
+    <div class="form-toolbar">
+      <div class="steps" aria-label="Earlier form sections" role="group">
+        <button class="step" id="about-toggle" type="button" aria-expanded="false" aria-controls="about-panel">
+          <span class="step-icon" aria-hidden="true"></span>About you
+        </button>
+        <span class="step-connector" aria-hidden="true"></span>
+        <button class="step" id="course-toggle" type="button" aria-expanded="false" aria-controls="course-panel">
+          <span class="step-icon" aria-hidden="true"></span>Course choice
+        </button>
+      </div>
+      <button class="adaptive-toggle" id="adaptive-toggle" type="button" role="switch" aria-checked="true" aria-label="Adaptive help">
+        Adaptive help: <strong id="adaptive-state">On</strong><span class="switch-track" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <section class="intro" aria-label="Getting started">
+      <div class="intro-instructions">
+        <div class="intro-copy">
+          <p><strong>Start here:</strong> Select <strong>Try the pause demo</strong> to instantly simulate an 8-second pause and see the form change.</p>
+          <p>This demo uses only sample data and what you type on this page. Nothing is sent out, no AI model runs, and there is no cost.</p>
+        </div>
+        <button class="button button-primary demo-button" id="try-pause" type="button"><span class="pause-icon" aria-hidden="true"></span>Try the pause demo</button>
+      </div>
+      <details class="words" id="words" open>
+        <summary>Words used here</summary>
+        <dl>
+          <div><dt>Adaptive help</dt><dd>Reversible changes to the form after you pause.</dd></div>
+          <div><dt>form-coach</dt><dd>The <span class="sample">Sample</span> source of the form changes.</dd></div>
+          <div><dt>Data shared</dt><dd>A preview of the field identifiers and pause signal the rule would receive.</dd></div>
+          <div><dt>Callable pattern</dt><dd>The address where a form could request a change.</dd></div>
+        </dl>
+      </details>
+    </section>
+
+    <form id="signup" aria-label="Sample workshop sign-up" novalidate>
+      <section class="panel early-panel" id="about-panel" aria-labelledby="about-heading" hidden>
+        <h2 class="section-heading" id="about-heading">About you</h2>
+        <div class="panel-body">
+          <div class="input-row">
+            <label for="attendee_name">Your name <span class="required">(required)</span></label>
+            <div class="field-control"><input id="attendee_name" type="text" required><span class="sample" data-sample-for="attendee_name">Sample</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel early-panel" id="course-panel" aria-labelledby="course-heading" hidden>
+        <h2 class="section-heading" id="course-heading">Course choice</h2>
+        <div class="panel-body">
+          <div class="input-row">
+            <label for="course">Course <span class="required">(required)</span></label>
+            <div class="field-control">
+              <select id="course" required>
+                <option value="">Choose a course</option>
+                <option>Bookbinding basics</option>
+                <option>Hand sewing basics</option>
+              </select>
+              <span class="sample" data-sample-for="course">Sample</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="companion-heading">
+        <h2 class="section-heading" id="companion-heading"><button class="section-toggle" id="companion-toggle" type="button" aria-expanded="true" aria-controls="companion-panel">Companion<span class="chevron" aria-hidden="true"></span></button></h2>
+        <div class="panel-body companion-body" id="companion-panel">
+          <fieldset class="companion-question" id="companion-question" aria-describedby="pause-hint">
+            <legend>Bringing a companion?</legend>
+            <div class="choices">
+              <label class="choice"><input id="companion-yes" type="radio" name="companion-choice" value="Yes" required><span>Yes</span></label>
+              <label class="choice"><input id="companion-no" type="radio" name="companion-choice" value="No"><span>No</span></label>
+              <span class="sample" data-sample-for="companion">Sample</span>
+            </div>
+          </fieldset>
+          <p class="pause-hint" id="pause-hint">Leave focus on this question for 8 seconds to try the pause yourself.</p>
+          <p class="example" id="companion-example" hidden><strong>Example:</strong> A friend or carer who attends with you. Companions join free. <span class="sample">Sample</span></p>
+          <div id="example-note"></div>
+          <div id="moved-fields"></div>
+          <div id="move-note"></div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="accessibility-heading">
+        <h2 class="section-heading" id="accessibility-heading"><button class="section-toggle" id="accessibility-toggle" type="button" aria-expanded="false" aria-controls="accessibility-panel">Accessibility needs<span class="chevron" aria-hidden="true"></span></button></h2>
+        <div class="panel-body" id="accessibility-panel" hidden>
+          <div class="input-row">
+            <label for="accessibility_needs">Access needs <span class="required">(optional)</span></label>
+            <textarea id="accessibility_needs" rows="3"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel payment" aria-labelledby="payment-heading">
+        <h2 class="section-heading" id="payment-heading"><button class="section-toggle" id="payment-toggle" type="button" aria-expanded="true" aria-controls="payment-panel"><span>Payment method at the venue</span><span class="payment-summary" id="payment-summary" hidden>Pay at the venue</span><span class="chevron" aria-hidden="true"></span></button></h2>
+        <div class="panel-body" id="payment-panel">
+          <div class="input-row">
+            <label for="payment_method">Method <span class="required">(required)</span></label>
+            <div class="field-control">
+              <select id="payment_method" required>
+                <option value="">Choose a payment method</option>
+                <option>Card at the venue</option>
+                <option>Cash at the venue</option>
+              </select>
+              <span class="sample" data-sample-for="payment_method">Sample</span>
+            </div>
+          </div>
+        </div>
+        <div id="payment-note"></div>
+      </section>
+
+      <section class="panel" id="original-companion-panel" aria-labelledby="original-companion-heading">
+        <h2 class="section-heading" id="original-companion-heading">Companion details</h2>
+        <div class="panel-body" id="original-fields">
+          <div class="companion-fields" id="companion-fields">
+            <div class="input-row">
+              <label for="companion_name">Companion name <span class="required">(required)</span></label>
+              <div class="field-control"><input id="companion_name" type="text" required><span class="sample" data-sample-for="companion_name">Sample</span></div>
+            </div>
+            <div class="input-row">
+              <label for="age_group">Age group <span class="required">(required)</span></label>
+              <div class="field-control">
+                <select id="age_group" required>
+                  <option value="">Choose an age group</option>
+                  <option>Adult</option>
+                  <option>Under 18</option>
+                </select>
+                <span class="sample" data-sample-for="age_group">Sample</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="review-heading">
+        <h2 class="section-heading" id="review-heading">Review</h2>
+        <div class="panel-body review-body">
+          <button class="button button-primary review-button" id="review-button" type="button" aria-expanded="false" aria-controls="review-panel">Review all inputs<span aria-hidden="true">→</span></button>
+          <section class="review-panel" id="review-panel" aria-labelledby="review-title" hidden>
+            <h3 id="review-title" tabindex="-1">Check your inputs</h3>
+            <dl class="review-list" id="review-list"></dl>
+            <p id="review-message"></p>
+            <button class="button button-primary" id="submit-button" type="button">Submit</button>
+            <p class="submit-result" id="submit-result" tabindex="-1" hidden>Sample: nothing is submitted</p>
+          </section>
+        </div>
+      </section>
+    </form>
+
+    <section class="ledger" aria-labelledby="ledger-heading">
+      <h2 id="ledger-heading">Data shared <span class="ledger-caption">Local preview</span></h2>
+      <dl class="ledger-items">
+        <div><dt>Field IDs:</dt><dd><code id="ledger-fields">None yet</code></dd></div>
+        <div><dt>Signal:</dt><dd id="ledger-signal">None yet</dd></div>
+        <div class="ledger-zero"><dt class="visually-hidden">Entered values:</dt><dd><strong>0 entered values shared</strong></dd></div>
+      </dl>
+      <p>Callable pattern: <code>https://pliant.example/form-coach</code> <span class="sample">Sample</span></p>
+    </section>
+  </main>
+
+  <div class="status" id="status"><p role="status" aria-atomic="true" id="status-message"></p></div>
+  <div class="palette-picker">
+    <label for="palette">Palette</label>
+    <select id="palette">
+      <option value="Basting_Thread">Basting Thread</option>
+      <option value="Pencil_Guide">Pencil Guide</option>
+      <option value="Proof_Sheet">Proof Sheet</option>
+    </select>
+  </div>
+
+  <template id="change-template">
+    <aside class="change-note">
+      <div>
+        <div class="change-heading"><strong>Why this changed</strong><span class="decision"><span class="decision-mark" aria-hidden="true"></span><span data-decision></span></span></div>
+        <p data-reason></p>
+        <p class="change-source">From <code>form-coach</code> on <code>pliant.example</code> <span class="sample">Sample</span></p>
+        <p class="preview" data-preview hidden></p>
+        <p class="change-trigger" data-trigger hidden></p>
+      </div>
+      <div class="change-actions">
+        <button class="button note-button" type="button" data-action="undo">Undo</button>
+        <button class="button note-button" type="button" data-action="preview">Show original</button>
+        <button class="button text-button" type="button" data-action="why" aria-expanded="false">Why now?</button>
+      </div>
+    </aside>
+  </template>
+
+  <noscript><p class="shell">Enable JavaScript to try the local demo.</p></noscript>
+</body>
+</html>

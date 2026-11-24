@@ -1,0 +1,120 @@
+{
+  "flyer": {
+    "title": "Harbor Light Photo Week",
+    "titleLines": ["Harbor Light", "Photo Week"],
+    "dates": "12–18 March 2027",
+    "venue": "Harbor Gallery"
+  },
+  "destinations": {
+    "venue": "Venue handout",
+    "web": "Web",
+    "social": "Social"
+  },
+  "slots": [
+    { "id": "lighthouse", "assetId": "lighthouse-at-sunset" },
+    { "id": "pier", "assetId": "pier-at-dusk" },
+    { "id": "map", "assetId": "harbor-map" }
+  ],
+  "assets": {
+    "lighthouse-at-sunset": {
+      "title": "Lighthouse at sunset",
+      "origin": "point-archive.example",
+      "credit": "Photo: Point Archive",
+      "art": "lighthouse",
+      "viewBox": "0 0 720 230",
+      "description": "A lighthouse stands on a rocky shore as the sun sets over the water.",
+      "license": {
+        "version": "v1",
+        "uses": {
+          "venue": { "decision": "usable", "condition": "Printed venue handouts are allowed with credit." },
+          "web": { "decision": "usable", "condition": "Event-page use is allowed with credit." },
+          "social": { "decision": "usable", "condition": "Event posts on Social are allowed with credit." }
+        }
+      }
+    },
+    "pier-at-dusk": {
+      "title": "Pier at dusk",
+      "origin": "studio-kite.example",
+      "credit": "Photo: Studio Kite",
+      "art": "pier",
+      "viewBox": "0 0 720 230",
+      "description": "A row of lamps lights a pier over the harbor at dusk.",
+      "license": {
+        "version": "v2",
+        "uses": {
+          "venue": { "decision": "usable", "condition": "Printed venue handouts are allowed with credit." },
+          "web": { "decision": "blocked", "condition": "Licensed for printed handouts only." },
+          "social": { "decision": "blocked", "condition": "Licensed for printed handouts only." }
+        }
+      }
+    },
+    "harbor-map": {
+      "title": "Harbor map",
+      "origin": "inlet-maps.example",
+      "credit": "Map: Inlet Maps",
+      "art": "map",
+      "viewBox": "0 0 720 230",
+      "description": "A street map shows the curved waterfront and its docks.",
+      "license": {
+        "version": "v1",
+        "uses": {
+          "venue": { "decision": "usable", "condition": "Printed venue handouts are allowed with credit." },
+          "web": { "decision": "usable", "condition": "Event-page use is allowed with credit." },
+          "social": { "decision": "review", "condition": "Ask the rights holder before posting this map on Social." }
+        }
+      }
+    },
+    "pier-web-crop": {
+      "title": "Pier at dusk — web crop 1600 px",
+      "origin": "studio-kite.example",
+      "art": "pier",
+      "viewBox": "225 19 495 158.125",
+      "description": "A closer crop of the pier brings the foremost lamp into view."
+    }
+  },
+  "negotiation": {
+    "assetId": "pier-at-dusk",
+    "destination": "web",
+    "initialOfferId": "pier-march",
+    "counters": [
+      {
+        "id": "april",
+        "message": "Could we keep the photo on the event page through 30 April 2027?",
+        "reply": "Yes. The sample offer extends event-page use through 30 April.",
+        "offerId": "pier-april"
+      },
+      {
+        "id": "social",
+        "message": "Could we also post the crop on Social?",
+        "reply": "Social use is outside the sample offer. The previous offer is still available."
+      }
+    ]
+  },
+  "offers": {
+    "pier-march": {
+      "assetId": "pier-web-crop",
+      "credit": "Photo: Studio Kite",
+      "license": {
+        "version": "v3",
+        "uses": {
+          "venue": { "decision": "usable", "condition": "Printed venue handouts are allowed with credit." },
+          "web": { "decision": "usable", "condition": "Web use on the event page until 2027-03-31; no edits except cropping." },
+          "social": { "decision": "blocked", "condition": "The web crop is licensed for venue handouts and the event page only." }
+        }
+      }
+    },
+    "pier-april": {
+      "assetId": "pier-web-crop",
+      "credit": "Photo: Studio Kite / Harbor Collection",
+      "license": {
+        "version": "v4",
+        "uses": {
+          "venue": { "decision": "usable", "condition": "Printed venue handouts are allowed with the updated credit." },
+          "web": { "decision": "usable", "condition": "Web use on the event page until 2027-04-30; keep the updated credit and make no edits except cropping." },
+          "social": { "decision": "blocked", "condition": "The web crop is licensed for venue handouts and the event page only." }
+        }
+      }
+    }
+  },
+  "usageCheckUrl": "https://edition-switch.example/usage-check"
+}

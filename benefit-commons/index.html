@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-palette="Window_Copy">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>Check your benefits | Benefit Commons</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./palettes/palette_Window_Copy.css">
+  <link rel="stylesheet" href="./palettes/palette_Desk_Lamp.css">
+  <link rel="stylesheet" href="./palettes/palette_Petal_Tab.css">
+  <link rel="stylesheet" href="./app.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="notice-band">
+    <div class="notice-inner">
+      <span class="wordmark">Benefit Commons</span>
+      <p>Estimate, not a decision. Apply through the official page.</p>
+    </div>
+  </header>
+
+  <main class="page">
+    <header class="intro">
+      <h1>Check your benefits</h1>
+      <p class="start"><strong>Start here:</strong> Review the sample inputs and select <strong>Check</strong> to see five estimates.</p>
+      <p class="intro-note">This prototype uses sample data only, sends nothing outside this page, runs no AI model, and costs nothing.</p>
+    </header>
+
+    <div class="diagram">
+      <section class="workspace" aria-labelledby="browser-title">
+        <header class="workspace-header">
+          <h2 id="browser-title">Your browser</h2>
+          <p>Household and income values stay in this browser.</p>
+        </header>
+
+        <form id="benefit-form" class="benefit-form" autocomplete="off" novalidate>
+          <p class="form-caption"><span class="sample-tag">Sample</span> <span>Try the example values or edit them.</span></p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="state">State</label>
+              <select id="state">
+                <option value="Ohio">Ohio</option>
+                <option value="Other state">Other state</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="household-size">Household size</label>
+              <input id="household-size" type="number" min="1" max="99" step="1" value="3" required>
+            </div>
+            <div class="field income-field">
+              <label for="monthly-income">Monthly income before tax</label>
+              <input id="monthly-income" type="text" inputmode="decimal" value="$2,400" required>
+            </div>
+            <div class="field">
+              <label for="children">Children under 18</label>
+              <input id="children" type="number" min="0" max="99" step="1" value="1" required>
+            </div>
+            <div class="field">
+              <label for="language">Language</label>
+              <select id="language">
+                <option value="English">English</option>
+                <option value="Other language">Other language</option>
+              </select>
+            </div>
+            <button id="check-button" class="primary-button" type="submit" disabled>Check</button>
+          </div>
+          <p id="input-error" class="input-error" role="alert" hidden></p>
+        </form>
+
+        <section class="calculation" aria-labelledby="calculated-title">
+          <h3 id="calculated-title">Calculated here</h3>
+          <p class="check-status" id="check-status" role="status" aria-atomic="true">Waiting for your first check.</p>
+          <noscript><p>Enable JavaScript to check the sample rules on this page.</p></noscript>
+          <div id="results" class="results"></div>
+        </section>
+
+        <section class="ledger" aria-labelledby="ledger-title">
+          <div class="privacy-summary">
+            <span class="privacy-number">0</span>
+            <strong>sites received household or income values</strong>
+          </div>
+          <div class="ledger-detail">
+            <h3 id="ledger-title">Data sent</h3>
+            <p>None in this prototype.</p>
+            <p><strong>Allowed fields for rule sites</strong><br>State and language only.</p>
+          </div>
+        </section>
+      </section>
+
+      <aside class="rule-sites" aria-labelledby="sources-title">
+        <div class="mobile-flow" aria-hidden="true">
+          <span class="mobile-arrow"></span>
+          Rule copies
+        </div>
+        <header class="source-header">
+          <h2 id="sources-title">Rule sites</h2>
+          <p>Sample rule copies go into your browser.</p>
+        </header>
+        <ul id="rule-list" class="rule-list"></ul>
+      </aside>
+    </div>
+
+    <details class="glossary" open>
+      <summary>Words used here</summary>
+      <dl>
+        <div>
+          <dt>Benefit Commons</dt>
+          <dd>A tool for estimating which benefits you might qualify for.</dd>
+        </div>
+        <div>
+          <dt>Rule copy</dt>
+          <dd>A dated copy of a program’s eligibility rules. All copies here contain invented limits.</dd>
+        </div>
+        <div>
+          <dt>Peer Preflight · Pass</dt>
+          <dd>Peer Preflight checks a rule site before contact. Pass is a sample label here.</dd>
+        </div>
+        <div>
+          <dt>Likely · Maybe · Unlikely</dt>
+          <dd>Likely means the entered values fit the sample rules. Maybe means more review is needed. Unlikely means a sample rule was missed.</dd>
+        </div>
+        <div>
+          <dt>Official application</dt>
+          <dd>The page for applying to a program. Here the link opens a sample preview.</dd>
+        </div>
+        <div>
+          <dt>Checklist</dt>
+          <dd>A downloadable list of sample documents to gather.</dd>
+        </div>
+      </dl>
+    </details>
+
+    <footer class="page-footer"><span class="sample-tag">Sample</span> <span>benefit-commons.example/navigator</span></footer>
+  </main>
+
+  <div class="palette-control">
+    <p id="palette-status" class="palette-status" role="status" aria-atomic="true"></p>
+    <label for="palette">Palette</label>
+    <select id="palette">
+      <option value="Window_Copy">Window Copy</option>
+      <option value="Desk_Lamp">Desk Lamp</option>
+      <option value="Petal_Tab">Petal Tab</option>
+    </select>
+  </div>
+
+  <dialog id="sample-application" class="application-dialog" aria-labelledby="application-title">
+    <h2 id="application-title">Official application</h2>
+    <p id="application-program" class="application-program"></p>
+    <p><span class="sample-tag">Sample</span> <span id="application-address"></span></p>
+    <p>Opened a sample page preview in this browser. No application was submitted.</p>
+    <button id="close-application" class="primary-button" type="button" autofocus>Close preview</button>
+  </dialog>
+
+  <template id="rule-source-template">
+    <li class="rule-card">
+      <span class="rule-flow" aria-hidden="true"><span>Rule copy</span></span>
+      <span class="sample-tag">Sample</span>
+      <h3 class="source-site"></h3>
+      <div class="source-meta">
+        <p>Copied <time></time></p>
+        <p class="source-preflight">Peer Preflight · <strong></strong></p>
+      </div>
+    </li>
+  </template>
+
+  <template id="result-template">
+    <article class="result-card">
+      <h4 class="result-title"></h4>
+      <div class="result-grid">
+        <p class="decision"><span class="decision-mark" aria-hidden="true"></span><span class="decision-label"></span></p>
+        <div class="result-explanation">
+          <h5>Reason</h5>
+          <p class="result-reason"></p>
+          <p class="result-source"><span class="sample-tag">Sample</span> <span class="result-site"></span> · <span class="copy-date">Copied <time></time></span></p>
+        </div>
+        <div class="result-actions">
+          <a class="secondary-button application-link" href="#sample-application">Official application <span class="sample-tag">Sample</span></a>
+          <button class="secondary-button export-button" type="button">Export checklist</button>
+        </div>
+      </div>
+      <p class="result-feedback" role="status" aria-atomic="true"></p>
+    </article>
+  </template>
+</body>
+</html>

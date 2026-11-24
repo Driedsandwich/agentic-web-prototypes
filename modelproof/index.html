@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-palette="Bench">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modelproof</title>
+  <link rel="stylesheet" href="./palettes/Bench.css">
+  <link rel="stylesheet" href="./palettes/Carbon.css">
+  <link rel="stylesheet" href="./palettes/Imprint.css">
+  <link rel="stylesheet" href="./app.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main class="workspace">
+    <header class="masthead">
+      <h1>Modelproof</h1>
+      <p>Agent compatibility workbench</p>
+    </header>
+
+    <section class="panel declaration-panel" aria-labelledby="declaration-heading">
+      <div class="orientation">
+        <p><strong>Start here:</strong> Allow the sample load, then press <strong>Load</strong> to see the Generation 1 test results.</p>
+        <p>This prototype uses sample data only. No data is sent to external services, no AI models run, and there is no cost.</p>
+      </div>
+
+      <form id="load-form" class="loader">
+        <div class="load-row">
+          <label for="graph-address">Graph address <span class="sample">Sample</span></label>
+          <input id="graph-address" type="text" inputmode="url" spellcheck="false" autocomplete="off" value="https://ferry-desk.example/agents/ferry" required>
+          <span class="agent-count" id="agent-count"><span class="sample">Sample</span></span>
+          <label class="consent"><input id="load-consent" type="checkbox"> Allow this page to load the sample graph</label>
+          <button type="submit" id="load-button" disabled>Load</button>
+        </div>
+      </form>
+
+      <div class="declaration-grid">
+        <div class="declaration">
+          <div class="section-title">
+            <h2 id="declaration-heading">Compatibility declaration</h2>
+            <span class="sample">Sample</span>
+          </div>
+          <p id="declaration-summary" class="declaration-summary">Apply Harden after inspecting a broken result to see which models can be declared.</p>
+          <ul class="models" id="declared-models" aria-label="Declared models" hidden></ul>
+          <div class="exports">
+            <button id="export-declaration" type="button" disabled>Export declaration</button>
+            <button id="export-graph" type="button" disabled>Export graph JSON</button>
+          </div>
+        </div>
+
+        <section class="lookup" aria-labelledby="lookup-heading">
+          <h2 id="lookup-heading">Compatibility lookup</h2>
+          <p>Has this graph been tested with my model?</p>
+          <div class="lookup-address">
+            <label for="lookup-address">Lookup address <span class="sample">Sample</span></label>
+            <div class="address-line">
+              <input id="lookup-address" type="text" readonly value="https://modelproof.example/compat-lookup">
+              <button id="copy-address" class="secondary-button" type="button" disabled>Copy</button>
+            </div>
+          </div>
+
+          <form id="lookup-form">
+            <div class="lookup-graph">
+              <label for="lookup-graph">Graph address <span class="sample">Sample</span></label>
+              <input id="lookup-graph" type="text" inputmode="url" spellcheck="false" autocomplete="off" value="https://ferry-desk.example/agents/ferry" required>
+            </div>
+            <div class="lookup-model">
+              <label for="lookup-model">Model</label>
+              <select id="lookup-model" required></select>
+            </div>
+            <button id="check-compatibility" type="submit" disabled>Check</button>
+          </form>
+          <p class="hint">Checks the declaration in this page.</p>
+          <div id="lookup-result" class="lookup-result" hidden>
+            <p id="lookup-answer" role="status"></p>
+            <details>
+              <summary>View result JSON</summary>
+              <pre id="lookup-json"></pre>
+            </details>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="panel budget-panel" aria-label="Sample budget and replay">
+      <div class="budget-value">
+        <label for="budget-cap">Budget cap</label>
+        <span class="sample">Sample</span>
+        <span class="cap-field"><span aria-hidden="true">$</span><input id="budget-cap" aria-label="Sample budget cap in US dollars" type="number" min="0" step="0.01" value="2.00"></span>
+      </div>
+      <div class="budget-value">
+        <span>Spent</span>
+        <span class="sample">Sample</span>
+        <strong id="spent"></strong>
+      </div>
+      <div class="replay">
+        <button id="run-tests" type="button" aria-describedby="replay-note" disabled>Run tests</button>
+        <p id="replay-note" class="hint">Sample: replays a recorded run. No model runs.</p>
+      </div>
+    </section>
+
+    <section class="panel evidence-panel" aria-labelledby="evidence-heading">
+      <div class="evidence-header">
+        <div class="section-title">
+          <h2 id="evidence-heading" tabindex="-1">Test evidence</h2>
+          <span class="sample">Sample</span>
+        </div>
+        <div id="evidence-counts" class="counts" hidden>
+          <span id="current-counts"></span>
+          <span id="previous-counts" hidden></span>
+        </div>
+      </div>
+      <p id="evidence-note" class="evidence-note">Load the sample graph to show the recorded results by scenario and model.</p>
+      <div id="matrix-wrap" class="matrix-wrap" hidden>
+        <table id="matrix" aria-label="Sample recorded run by scenario and model"></table>
+      </div>
+      <div id="legend" class="legend" aria-label="Result legend">
+        <strong>Legend</strong>
+      </div>
+      <section id="active-failure" class="failure-panel" aria-label="Selected failure" hidden></section>
+    </section>
+
+    <details id="archive" class="panel disclosure">
+      <summary id="archive-title">Generation 1 failure</summary>
+      <div id="archived-failure" class="disclosure-body">
+        <p>Inspect a Broke result in Generation 1 to see the record here.</p>
+      </div>
+    </details>
+    <details id="prompt-changes" class="panel disclosure">
+      <summary>Prompt changes <span aria-hidden="true">·</span> Generation 2</summary>
+      <div class="disclosure-body">
+        <p id="prompt-intro">Harden adds two instructions and shows the second recorded run.</p>
+        <ol id="prompt-lines" class="prompt-lines" aria-label="Added instructions" hidden></ol>
+      </div>
+    </details>
+    <details class="panel disclosure glossary" open>
+      <summary>Words used here</summary>
+      <dl class="disclosure-body">
+        <div><dt>Agent graph</dt><dd>Agents and the routes they use to hand work to one another.</dd></div>
+        <div><dt>Model and scenario</dt><dd>A model is the AI that runs the agents. A scenario is one task used to test their behavior.</dd></div>
+        <div><dt>Generation</dt><dd>A version of the graph's instructions with its own recorded test results.</dd></div>
+        <div><dt>Held, Broke, Stopped</dt><dd>The behavior held, a check found a violation, or the run ended before the checks finished.</dd></div>
+        <div><dt>Harden</dt><dd>Add two instructions to the graph and view the recorded results for that version.</dd></div>
+        <div><dt>Declaration</dt><dd>A list of the models that held in every scenario for this generation.</dd></div>
+        <div><dt>Compatibility lookup</dt><dd>Yes means the model qualified. No means it was tested and did not qualify. Not tested means the declaration has no record for that graph and model.</dd></div>
+      </dl>
+    </details>
+
+    <noscript><p class="panel script-note">Enable JavaScript to use the sample replay and exports.</p></noscript>
+  </main>
+
+  <footer class="page-tools">
+    <p id="action-status" class="action-status" role="status"></p>
+    <div class="palette-tool">
+      <label for="palette">Palette</label>
+      <select id="palette">
+        <option value="Bench" selected>Bench</option>
+        <option value="Carbon">Carbon</option>
+        <option value="Imprint">Imprint</option>
+      </select>
+    </div>
+  </footer>
+</body>
+</html>

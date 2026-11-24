@@ -1,0 +1,19 @@
+{
+  "id": "school-meals",
+  "title": "Sample free or reduced-price school meals",
+  "notice": "Sample rules — not the real program thresholds",
+  "source": {
+    "site": "school-meals-rules.example",
+    "copiedOn": "2026-11-20",
+    "samplePreflight": "Pass",
+    "application": "https://school-meals-rules.example/apply"
+  },
+  "rule": {
+    "state": "Ohio",
+    "minimumChildren": 1,
+    "baseMonthlyCents": 152500,
+    "additionalPersonCents": 47500,
+    "reviewRangeCents": 25000
+  },
+  "checklist": ["Household member list", "Recent income records", "School enrollment details"]
+}

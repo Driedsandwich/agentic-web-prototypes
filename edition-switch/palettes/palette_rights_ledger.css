@@ -1,0 +1,82 @@
+/* Rights Ledger | Edition Switch */
+:root[data-palette="rights_ledger"] {
+  --background: #C9BDA9;
+  --surface: #FBF8F0;
+  --surface-strong: #ECE4D6;
+  --border: #685D50;
+  --text: #231F1B;
+  --text-muted: #4E453A;
+  --accent: #256E7C;
+  --on-accent: #FFFFFF;
+  --success: #38523D;
+  --on-success: #FFFFFF;
+  --danger: #A0442D;
+  --on-danger: #FFFFFF;
+  --warning: #4D4037;
+  --on-warning: #FFFFFF;
+  --focus: #65418A;
+  --decision-1: #244A92;
+  --decision-2: #741938;
+  --decision-3: #8C640D;
+  --paper: #FFFEFB;
+  --header: #FFFEFB;
+  --surface-text: #231F1B;
+  --surface-text-muted: #4E453A;
+  --rule: #C4BAAA;
+  --input: #DBD2C1;
+  --input-selected: #FFFEFB;
+  --focus-frame: #65418A;
+  --on-decision: #FFFFFF;
+  --series-current: #544839;
+  --series-proposed: #304647;
+}
+
+/* audit:contrast body normal --text --background */
+/* audit:contrast muted-copy normal --text-muted --background */
+/* audit:contrast on-accent normal --on-accent --accent */
+/* audit:contrast decision-1-mark nontext --decision-1 --surface */
+
+/* audit:ladder grayscale
+   --background --surface --surface-strong
+   --border --text-muted --text */
+
+/* audit:group decisions
+   --decision-1 --decision-2 --decision-3 */
+
+/* audit:group key-role-separation
+   --accent --success --decision-1 */
+
+/* audit:group negative-role-separation
+   --danger --decision-2 */
+
+/* audit:contrast header-copy normal --text --header */
+/* audit:contrast toolbar-copy normal --text --surface-strong */
+/* audit:contrast panel-copy normal --surface-text --surface */
+/* audit:contrast flyer-title large --surface-text --paper */
+/* audit:contrast flyer-details normal --surface-text --paper */
+/* audit:contrast panel-muted-copy normal --surface-text-muted --surface */
+/* audit:contrast input-copy normal --surface-text --input */
+/* audit:contrast selected-input-copy normal --surface-text --input-selected */
+/* audit:contrast counter-outline nontext --surface-text --input-selected */
+/* audit:contrast accept-shape nontext --accent --surface */
+/* audit:contrast decision-1-copy normal --on-decision --decision-1 */
+/* audit:contrast decision-2-copy normal --on-decision --decision-2 */
+/* audit:contrast decision-3-copy normal --on-decision --decision-3 */
+/* audit:contrast decision-2-mark nontext --decision-2 --surface */
+/* audit:contrast decision-3-mark nontext --decision-3 --surface */
+/* audit:contrast decision-2-heading large --decision-2 --surface */
+/* audit:contrast preflight-pass normal --success --surface */
+/* audit:contrast remove-label normal --danger --surface */
+/* audit:contrast on-success normal --on-success --success */
+/* audit:contrast on-danger normal --on-danger --danger */
+/* audit:contrast on-warning normal --on-warning --warning */
+/* audit:contrast focus-on-panel nontext --focus --surface */
+/* audit:contrast focus-on-toolbar nontext --focus-frame --surface-strong */
+/* audit:contrast current-caption normal --series-current --surface */
+/* audit:contrast proposed-caption normal --series-proposed --surface */
+
+/* audit:group action-and-decisions
+   --accent --decision-1 --decision-2 --decision-3 */
+
+/* audit:group caution-role-separation
+   --warning --decision-3 */

@@ -1,0 +1,19 @@
+{
+  "id": "early-education",
+  "title": "Sample early childhood education",
+  "notice": "Sample rules — not the real program thresholds",
+  "source": {
+    "site": "early-education-rules.example",
+    "copiedOn": "2026-11-15",
+    "samplePreflight": "Pass",
+    "application": "https://early-education-rules.example/apply"
+  },
+  "rule": {
+    "state": "Ohio",
+    "minimumChildren": 1,
+    "baseMonthlyCents": 134000,
+    "additionalPersonCents": 28000,
+    "reviewRangeCents": 30000
+  },
+  "checklist": ["Child’s proof of age", "Proof of address", "Recent income records"]
+}

@@ -1,0 +1,89 @@
+{
+  "networks": [
+    {
+      "id": "spec-docs",
+      "address": "https://docmesh.example/agents/spec-docs",
+      "source": "Agentic web spec",
+      "mark": "AGW",
+      "license": "Apache-2.0",
+      "section": {
+        "title": "§3.4 Public artifacts and CORS",
+        "summary": "A visitor's browser fetches and runs the partner network. The visitor's page is the origin of calls the network makes from that browser.",
+        "answerSentences": {
+          "partner-call": "The partner network runs in the visitor's browser, making the call from the visitor's page across origins.",
+          "caller-origin": "Use the origin of the visitor's page, where the browser runs the partner network.",
+          "preflight": "The browser makes the cross-origin request from the page running the partner network."
+        }
+      }
+    },
+    {
+      "id": "mcp-spec-docs",
+      "address": "https://mcp-docs.example/agents/mcp-spec-docs",
+      "source": "MCP specification",
+      "mark": "MCP",
+      "license": "Apache-2.0",
+      "section": {
+        "title": "Transports",
+        "summary": "An MCP server using HTTP is reached through one endpoint. The server should check the Origin header on incoming requests.",
+        "answerSentences": {
+          "partner-call": "Serve HTTP MCP at a single endpoint and validate the request's Origin header.",
+          "caller-origin": "The MCP server should also validate the Origin header it receives.",
+          "preflight": "One HTTP endpoint serves MCP, and the server should validate the Origin header."
+        }
+      }
+    },
+    {
+      "id": "web-platform-docs",
+      "address": "https://webdocs.example/agents/web-platform-docs",
+      "source": "MDN Web Docs",
+      "mark": "MDN",
+      "license": "CC-BY-SA 2.5",
+      "section": {
+        "title": "CORS",
+        "summary": "To let a page on another origin call the endpoint, the server needs an Access-Control-Allow-Origin response header that covers that page's origin. The server also needs to handle the browser's preflight request.",
+        "answerSentences": {
+          "partner-call": "Return Access-Control-Allow-Origin for the caller's origin and respond to the browser's preflight request.",
+          "caller-origin": "The endpoint's Access-Control-Allow-Origin response needs to cover that page's origin.",
+          "preflight": "When the browser sends a preflight, the endpoint needs to answer it before the cross-origin call can proceed."
+        }
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "partner-call",
+      "prompt": "A partner network runs in my visitor's browser. What does my MCP endpoint need so that the partner can call it?",
+      "sourceOrder": [
+        "spec-docs",
+        "web-platform-docs",
+        "mcp-spec-docs"
+      ]
+    },
+    {
+      "id": "caller-origin",
+      "prompt": "Which origin should my server allow when a partner network runs in a visitor's browser?",
+      "sourceOrder": [
+        "spec-docs",
+        "web-platform-docs",
+        "mcp-spec-docs"
+      ]
+    },
+    {
+      "id": "preflight",
+      "prompt": "How does a browser preflight fit into a call to my MCP endpoint?",
+      "sourceOrder": [
+        "web-platform-docs",
+        "spec-docs",
+        "mcp-spec-docs"
+      ]
+    }
+  ],
+  "preflight": {
+    "result": "Pass",
+    "tool": "Peer Preflight"
+  },
+  "manifest": {
+    "name": "my-docs",
+    "readTool": "read_section"
+  }
+}

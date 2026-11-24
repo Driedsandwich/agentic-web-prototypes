@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-palette="press_proof">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Try checking photo rights as an event flyer moves from print to the Web.">
+  <title>Edition Switch</title>
+  <link rel="stylesheet" href="./palettes/palette_press_proof.css">
+  <link rel="stylesheet" href="./palettes/palette_rights_ledger.css">
+  <link rel="stylesheet" href="./palettes/palette_exposure_log.css">
+  <link rel="stylesheet" href="./app.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="frame topbar-inner">
+      <h1>Edition Switch</h1>
+      <button class="export-button" id="export" type="button" disabled>
+        <span class="download-icon" aria-hidden="true">↓</span>
+        Export credits
+      </button>
+    </div>
+  </header>
+
+  <section class="publishing" aria-label="Publishing destinations">
+    <div class="frame publishing-inner">
+      <fieldset class="destinations" id="destinations" disabled>
+        <legend class="visually-hidden">Primary publishing destination</legend>
+        <label><input type="radio" name="destination" value="venue" checked><span>Venue handout</span></label>
+        <label><input type="radio" name="destination" value="web"><span>Web</span></label>
+        <label><input type="radio" name="destination" value="social"><span>Social</span></label>
+      </fieldset>
+      <label class="web-toggle" id="web-option">
+        <input type="checkbox" id="also-web" disabled>
+        <span>Also publish on Web</span>
+      </label>
+    </div>
+  </section>
+
+  <main class="frame">
+    <section class="introduction" aria-label="Start here">
+      <div class="intro-copy">
+        <p class="start"><strong>Start here:</strong> Turn on <strong>Also publish on Web</strong> to check the flyer’s photo rights for both destinations.</p>
+        <p>Actions update this page using sample data only. Nothing is sent, no AI model runs, and there is no payment or contract.</p>
+      </div>
+      <a class="glossary-link" href="#words">Words used here <span aria-hidden="true">↘</span></a>
+    </section>
+
+    <p class="page-status" id="page-status" role="status">Loading sample flyer…</p>
+    <noscript><p>Enable JavaScript to try the sample flyer and check its photo rights.</p></noscript>
+
+    <div class="workspace" id="workspace" hidden>
+      <section class="stage" aria-label="Flyer preview">
+        <article class="flyer" aria-labelledby="flyer-title">
+          <header class="flyer-header">
+            <span class="sample">Sample</span>
+            <h2 id="flyer-title"></h2>
+            <p id="flyer-dates" class="flyer-dates"></p>
+            <p id="flyer-venue" class="flyer-venue"></p>
+          </header>
+          <div id="placements" class="placements"></div>
+        </article>
+      </section>
+
+      <aside class="inspector" aria-label="Selected photo and sample rights exchange">
+        <div id="selected-photo"></div>
+        <div id="offer"></div>
+        <p class="panel-status" id="panel-status" role="status"></p>
+
+        <section class="panel-section exchange" aria-labelledby="exchange-heading">
+          <div class="section-heading">
+            <h2 id="exchange-heading">Proposal history</h2>
+            <span class="sample">Sample</span>
+          </div>
+          <div id="history"></div>
+        </section>
+
+        <section class="panel-section tools" aria-label="Sample checks and request information">
+          <div class="section-heading">
+            <h2>Peer Preflight</h2>
+            <span class="sample">Sample</span>
+          </div>
+          <p id="preflight">Runs a local check of the request fields when an offer is requested.</p>
+          <div class="section-heading usage-heading">
+            <h2>Usage check</h2>
+            <span class="sample">Sample</span>
+          </div>
+          <p class="sample-address" id="usage-check"></p>
+          <details class="ledger" open>
+            <summary>Request ledger</summary>
+            <p class="ledger-note"><strong>Sample: nothing is sent</strong></p>
+            <dl id="ledger"></dl>
+          </details>
+        </section>
+      </aside>
+
+      <details class="glossary" id="words" open>
+        <summary>Words used here</summary>
+        <dl>
+          <div><dt>Edition</dt><dd>The flyer prepared for a particular place, such as a venue handout or the event page.</dd></div>
+          <div><dt>Rights holder</dt><dd>The source that sets how a photo or map may be used.</dd></div>
+          <div><dt>Usable</dt><dd>The sample rules allow the selected uses when you follow the listed terms.</dd></div>
+          <div><dt>Needs review</dt><dd>The sample rules call for a check before publication.</dd></div>
+          <div><dt>Not for this use</dt><dd>At least one selected destination is outside the current terms.</dd></div>
+          <div><dt>Counteroffer</dt><dd>A different photo, crop, or set of terms offered in response to a request.</dd></div>
+          <div><dt>Counter</dt><dd>Ask the rights holder to change the proposed terms.</dd></div>
+          <div><dt>Terms version</dt><dd>The revision of the sample usage terms, such as v3.</dd></div>
+          <div><dt>Peer Preflight / Pass</dt><dd>A local check before a sample request. Pass means the required request fields are present.</dd></div>
+          <div><dt>Usage check</dt><dd>Applying a photo’s sample terms to the selected publishing destinations.</dd></div>
+        </dl>
+      </details>
+    </div>
+  </main>
+
+  <div class="palette-picker">
+    <p id="palette-status" role="status"></p>
+    <label for="palette">Palette</label>
+    <select id="palette">
+      <option value="press_proof" selected>Press Proof</option>
+      <option value="rights_ledger">Rights Ledger</option>
+      <option value="exposure_log">Exposure Log</option>
+    </select>
+  </div>
+</body>
+</html>

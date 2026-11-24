@@ -1,0 +1,25 @@
+:root[data-palette="Bench"] {
+  --background: #AAB4AA;
+  --surface: #F7F7EE;
+  --surface-strong: #D4DDD2;
+  --border: #748178;
+  --text: #1D2923;
+  --text-muted: #3B4741;
+  --accent: #012C28;
+  --on-accent: #FFFFFF;
+  --success: #577022;
+  --on-success: #FFFFFF;
+  --danger: #B13C32;
+  --on-danger: #FFFFFF;
+  --warning: #662B01;
+  --on-warning: #FFFFFF;
+  --focus: #27324C;
+  --decision-1: #234D88;
+  --decision-2: #87314B;
+  --decision-3: #6B5B25;
+  --budget: #E3DFCE;
+  --input: #FFFFFC;
+  --table-body: #EDF1EB;
+  --secondary: #1D2923;
+  --on-secondary: #FFFFFF;
+}

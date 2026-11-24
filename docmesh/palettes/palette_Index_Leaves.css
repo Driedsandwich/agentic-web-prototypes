@@ -1,0 +1,23 @@
+:root[data-palette="Index_Leaves"] {
+  --background: #E8E1EB;
+  --surface: #FBFCFD;
+  --surface-strong: #D1DCE3;
+  --border: #62636F;
+  --text: #24222D;
+  --text-muted: #42414D;
+  --accent: #5A2368;
+  --on-accent: #FFFFFF;
+  --success: #3F5F1E;
+  --on-success: #FFFFFF;
+  --danger: #92243C;
+  --on-danger: #FFFFFF;
+  --warning: #F4CF66;
+  --on-warning: #332609;
+  --focus: #12415D;
+  --decision-1: #35608F;
+  --decision-2: #7E7632;
+  --decision-3: #164137;
+  --input: #F2F1F7;
+  --inset: #E3DBE8;
+  --text-result: #151320;
+}

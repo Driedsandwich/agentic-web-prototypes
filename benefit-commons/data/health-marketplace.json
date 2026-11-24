@@ -1,0 +1,19 @@
+{
+  "id": "health-marketplace",
+  "title": "Sample health insurance marketplace",
+  "notice": "Sample rules — not the real program thresholds",
+  "source": {
+    "site": "health-market-rules.example",
+    "copiedOn": "2026-11-16",
+    "samplePreflight": "Pass",
+    "application": "https://health-market-rules.example/apply"
+  },
+  "rule": {
+    "state": "Ohio",
+    "minimumChildren": 0,
+    "baseMonthlyCents": 178000,
+    "additionalPersonCents": 61000,
+    "reviewRangeCents": 40000
+  },
+  "checklist": ["Household member list", "Expected income records", "Current health coverage details"]
+}

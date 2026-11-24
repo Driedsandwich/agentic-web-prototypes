@@ -1,0 +1,19 @@
+{
+  "id": "earned-income-credit",
+  "title": "Sample earned income tax credit",
+  "notice": "Sample rules — not the real program thresholds",
+  "source": {
+    "site": "earned-income-rules.example",
+    "copiedOn": "2026-11-17",
+    "samplePreflight": "Pass",
+    "application": "https://earned-income-rules.example/apply"
+  },
+  "rule": {
+    "state": "Ohio",
+    "minimumChildren": 0,
+    "baseMonthlyCents": 147000,
+    "additionalPersonCents": 40000,
+    "reviewRangeCents": 35000
+  },
+  "checklist": ["Earnings records", "Tax filing details", "Dependent information, if applicable"]
+}

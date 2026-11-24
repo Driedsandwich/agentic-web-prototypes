@@ -1,0 +1,25 @@
+:root[data-palette="Carbon"] {
+  --background: #191827;
+  --surface: #262538;
+  --surface-strong: #3D3A53;
+  --border: #8B879F;
+  --text: #F6F2FC;
+  --text-muted: #CDC6D8;
+  --accent: #EABC76;
+  --on-accent: #25192A;
+  --success: #E0FFAA;
+  --on-success: #191827;
+  --danger: #FFA382;
+  --on-danger: #191827;
+  --warning: #C8B0FA;
+  --on-warning: #191827;
+  --focus: #F5F0FA;
+  --decision-1: #72B9D7;
+  --decision-2: #CE77A7;
+  --decision-3: #BFC7D0;
+  --budget: #343046;
+  --input: #151423;
+  --table-body: #201F31;
+  --secondary: #F6F2FC;
+  --on-secondary: #191827;
+}

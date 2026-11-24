@@ -1,0 +1,85 @@
+/* Benefit Commons · Window Copy */
+
+:root[data-palette="Window_Copy"] {
+  --background: #D9CDBA;
+  --surface: #EAF2FC;
+  --surface-strong: #D5E2EF;
+  --border: #596779;
+  --text: #222A34;
+  --text-muted: #3E4B5B;
+  --accent: #153A93;
+  --on-accent: #F8FBFF;
+  --success: #103E22;
+  --on-success: #FFFFFF;
+  --danger: #A82F20;
+  --on-danger: #FFFFFF;
+  --warning: #F2D188;
+  --on-warning: #35280E;
+  --focus: #803872;
+  --decision-1: #397486;
+  --decision-2: #322B37;
+  --decision-3: #775100;
+  --workspace: #F3F7FD;
+  --input: #FCFAF4;
+  --on-input: #222A34;
+  --source-surface: #D6E0EA;
+  --band: #31435A;
+  --on-band: #FFF7EB;
+  --privacy-ink: #14253B;
+  --flow: #374B66;
+}
+
+/* audit:contrast body normal --text --background */
+/* audit:contrast muted-copy normal --text-muted --background */
+/* audit:contrast on-accent normal --on-accent --accent */
+/* audit:contrast decision-1-mark nontext --decision-1 --surface */
+/* audit:ladder grayscale
+   --background --surface --surface-strong
+   --border --text-muted --text */
+/* audit:group decisions
+   --decision-1 --decision-2 --decision-3 */
+/* audit:group key-role-separation
+   --accent --success --decision-1 */
+/* audit:group negative-role-separation
+   --danger --decision-2 */
+/* audit:group action-vs-decisions
+   --accent --decision-1 --decision-2 --decision-3 */
+/* audit:group review-role-separation
+   --decision-3 --warning --accent */
+/* audit:group source-vs-other-decisions
+   --success --decision-2 --decision-3 */
+/* audit:contrast band-copy normal --on-band --band */
+/* audit:contrast workspace-copy normal --text --workspace */
+/* audit:contrast workspace-muted normal --text-muted --workspace */
+/* audit:contrast form-copy normal --text --surface-strong */
+/* audit:contrast ledger-muted normal --text-muted --surface-strong */
+/* audit:contrast result-copy normal --text --surface */
+/* audit:contrast input-copy normal --on-input --input */
+/* audit:contrast source-copy normal --text --source-surface */
+/* audit:contrast source-muted normal --text-muted --source-surface */
+/* audit:contrast source-pass normal --success --source-surface */
+/* audit:contrast on-success normal --on-success --success */
+/* audit:contrast on-danger normal --on-danger --danger */
+/* audit:contrast on-warning normal --on-warning --warning */
+/* audit:contrast privacy-number large --privacy-ink --surface-strong */
+/* audit:contrast privacy-explanation normal --privacy-ink --surface-strong */
+/* audit:contrast privacy-heading normal --privacy-ink --workspace */
+/* audit:contrast workspace-frame-outside nontext --privacy-ink --background */
+/* audit:contrast workspace-frame-inside nontext --privacy-ink --workspace */
+/* audit:contrast input-boundary-outside nontext --border --surface-strong */
+/* audit:contrast button-boundary nontext --accent --surface-strong */
+/* audit:contrast secondary-button-label normal --on-input --input */
+/* audit:contrast secondary-button-boundary nontext --border --surface */
+/* audit:contrast focus-ring nontext --focus --surface-strong */
+/* audit:contrast focus-on-results nontext --focus --surface */
+/* audit:contrast focus-on-workspace nontext --focus --workspace */
+/* audit:contrast focus-on-outside nontext --focus --background */
+/* audit:contrast focus-on-source nontext --focus --source-surface */
+/* audit:contrast rules-copy-label normal --flow --background */
+/* audit:contrast rules-copy-arrow-over-workspace nontext --flow --workspace */
+/* audit:contrast rules-copy-arrow-in nontext --flow --surface-strong */
+/* audit:contrast decision-1-label normal --decision-1 --surface */
+/* audit:contrast decision-2-label normal --decision-2 --surface */
+/* audit:contrast decision-3-label normal --decision-3 --surface */
+/* audit:contrast decision-2-mark nontext --decision-2 --surface */
+/* audit:contrast decision-3-mark nontext --decision-3 --surface */
